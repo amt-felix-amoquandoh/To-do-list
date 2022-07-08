@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="" />
   <title>Document</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./css/style.css" />
@@ -15,10 +15,15 @@
   <div class="container">
     <h1 class="coolTitle"><b>Shopping List</b></h1>
 
-    <h4 id="first">Get it done today</h4>
-    <input id="userInput" type="text" placeholder="enter item">
-    <button id="addButton">Click here!</button>
-    <button>remove</button>
+    <h4 class="subTitle" id="first">Get it done today</h4>
+    <div class="formBody">
+    <input class="userInput" id="userInput" type="text" placeholder="enter item">
+    <div class="buttonGroup">
+    <button id="addButton">Add List Item</button>
+    <button id="editButton">Edit</button>
+    <button id="removeButton">Remove</button>
+    </div>
+    </div>
 
     <ul class="txt">
       

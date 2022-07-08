@@ -17,11 +17,9 @@ html {
     height: auto;
     border-radius: 20px;
     box-shadow: 2px 5px 7px rgb(80, 77, 77);
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    background-color: rgb(236, 229, 236);
 }
+
 
 .coolTitle{
   text-align: center;
@@ -31,7 +29,82 @@ html {
   word-spacing: 2px;
   color: tomato;
   text-shadow:    -1px -1px 0 firebrick,    -2px -2px 0 firebrick,    -3px -3px 0 firebrick,    -4px -4px 0 firebrick,    -5px -5px 0 firebrick,    -6px -6px 0 firebrick,    -7px -7px 0 firebrick,    -8px -8px 0 firebrick,    -30px -20px 40px dimgrey;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-top: auto;
 }
-  
+
+.subTitle{
+  text-align: center;
+  margin: 25px;
+}
+
+.formBody{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.buttonGroup{
+  margin: 20px 0;
+}
+
+#addButton{
+  margin: 0 5px;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px rgb(122, 190, 4);
+  border: none;
+  font-weight: bold;
+  padding: 10px;
+  background-color: rgb(122, 190, 4);
+  color: white;
+ 
+}
+
+#editButton{
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px rgb(14, 121, 236);
+  border: none;
+  font-weight: bold;
+  padding: 10px;
+  background-color: rgb(51, 77, 195);
+  color: white;
+  margin: 0 5px;
+}
+
+#removeButton{
+  margin: 0 5px;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px rgb(191, 14, 14);
+  border: none;
+  font-weight: bold;
+  padding: 10px;
+  background-color: rgb(191, 14, 14);
+  color: white;
+
+}
+
+#addButton:hover{
+  background-color: white;
+  color: rgb(122, 190, 4);
+}
+
+#editButton:hover{
+  background-color: white;
+  color: rgb(51, 77, 195);
+}
+
+#removeButton:hover{
+  background-color: white;
+  color: rgb(191, 14, 14);
+}
+
+.userInput{
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
