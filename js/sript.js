@@ -14,20 +14,24 @@ function addListItem(){
         userInput.value = '';
 
         let doneButton = document.createElement("button");
-        doneButton.innerHTML = `<ion-icon size="large" name="checkmark-done">`;
+        doneButton.innerHTML = `<ion-icon class="icon" name="checkmark-done">`;
         doneButton.classList.add("doneBtn", "btn");
         li.appendChild(doneButton);
 
         let removeButton = document.createElement("button");
-        removeButton.innerHTML = `<ion-icon size="large" name="trash-outline">`;
+        removeButton.innerHTML = `<ion-icon class="icon" name="trash-outline">`;
         removeButton.classList.add("removeBtn", "btn");
         li.appendChild(removeButton);
+
+        doneButton.addEventListener("click", function(){
+           doneButton.parentElement.style.textDecoration = "line-through";
+        })
 };
 
 function createOnkeypress (event){
   if(inputItem() > 0 && event.keyCode === 13 ){
     addListItem();
-}
+} 
 };
 
 function createOnClick(){

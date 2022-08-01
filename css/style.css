@@ -21,7 +21,7 @@ html {
   .container{
     padding: 15px 5px;
     margin-top: 20px;
-    width: 380px;
+    width: 360px;
     height: auto;
     border-radius: 20px;
     box-shadow: 2px 5px 7px rgb(80, 77, 77);
@@ -55,9 +55,6 @@ html {
   align-items: center;
 }
 
-.buttonGroup{
-  margin: 20px 0;
-}
 
 .addBtn{
   margin: 0 8px;
@@ -80,15 +77,19 @@ html {
   border: none;
   font-weight: bold;
   padding: 0 18px;
-  background-color: orangered;
-  color: white;
-  border: 2px double orangered;
-}
-.doneBtn:hover{
   background-color: white;
   color: orangered;
+  border: 2px double orangered;
+  margin-left: auto;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
-
+.doneBtn:hover{
+  background-color: orangered;
+  color: white;
+}
 
 .removeBtn{
   margin: 0 8px;
@@ -96,14 +97,13 @@ html {
   border: none;
   font-weight: bold;
   padding: 0 18px;
-  background-color: rgb(191, 14, 14);
-  color: white;
-  border: 2px double rgb(191, 14, 14);
-  
-}
-.removeBtn:hover{
   background-color: white;
   color: rgb(191, 14, 14);
+  border: 2px double rgb(191, 14, 14);
+}
+.removeBtn:hover{
+  background-color: rgb(191, 14, 14);
+  color: white;
 }
 
 .userInput{
@@ -114,14 +114,22 @@ html {
   border: 2px double teal;
 }
 
+#listItem{
+  margin-left: -10px;
+}
+
 li{ 
-  font-size: 30px;
+  font-size: 25px;
   color: rgb(0, 0, 0);
-  list-style: none;
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
   align-self: flex-end;
+  text-transform: capitalize;
+}
+
+.icon{
+  font-size: 20px;
 }
 
 
