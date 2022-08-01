@@ -8,6 +8,10 @@ html {
     padding:0;
     box-sizing: border-box;
     font-family: sans-serif;
+    background-image: url("../images/clay-banks-cEzMOp5FtV4-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .container{
