@@ -2,9 +2,12 @@ var button = document.getElementById('addButton');
 var userInput = document.getElementById('userInput');
 var listItem = document.getElementById('listItem');
 
+
+
 function inputItem (){
   return userInput.value.length;
 };
+
 
 function addListItem(){
   
@@ -33,6 +36,7 @@ function addListItem(){
           doneButton.remove();
           li.remove();
        })
+
 };
 
 function createOnkeypress (event){
