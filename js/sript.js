@@ -7,10 +7,21 @@ function inputItem (){
 };
 
 function addListItem(){
+  
   var li = document.createElement('li');
         li.appendChild(document.createTextNode(userInput.value));
         listItem.appendChild(li);
         userInput.value = '';
+
+        let doneButton = document.createElement("button");
+        doneButton.innerHTML = `<ion-icon size="large" name="checkmark-done">`;
+        doneButton.classList.add("doneBtn", "btn");
+        li.appendChild(doneButton);
+
+        let removeButton = document.createElement("button");
+        removeButton.innerHTML = `<ion-icon size="large" name="trash-outline">`;
+        removeButton.classList.add("removeBtn", "btn");
+        li.appendChild(removeButton);
 };
 
 function createOnkeypress (event){
