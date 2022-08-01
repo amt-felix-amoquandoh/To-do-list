@@ -25,7 +25,14 @@ function addListItem(){
 
         doneButton.addEventListener("click", function(){
            doneButton.parentElement.style.textDecoration = "line-through";
-        })
+        });
+
+        removeButton.addEventListener("click", function(e){
+          let target = e.target;
+          target.parentElement.remove();
+          doneButton.remove();
+          li.remove();
+       })
 };
 
 function createOnkeypress (event){
