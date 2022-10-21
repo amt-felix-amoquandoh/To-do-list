@@ -1,57 +1,70 @@
-var button = document.getElementById('addButton'); 
-var userInput = document.getElementById('userInput');
-var listItem = document.getElementById('listItem');
+window.addEventListener("load", () => {
+  const form = document.querySelector("#todoForm");
+  const input = document.querySelector("#todoInput");
+  const todoList = document.querySelector("#todos");
 
 
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-function inputItem (){
-  return userInput.value.length;
-};
+    const todo = input.value;
+
+    if(!todo){
+      alert("please enter a task")
+    }
+
+    const todoListContainer = document.createElement("div");
+    todoListContainer.classList.add("todo");
+
+    const todoListItem = document.createElement("div");
+    todoListItem.classList.add("todoContent");
+
+    todoListContainer.appendChild(todoListItem);
+    
+    const todoItem = document.createElement("input");
+    todoItem.classList.add("todoInput");
+    todoItem.type = "text";
+    todoItem.value = todo;
+    todoItem.setAttribute("readonly", "readonly");
+
+    todoListItem.appendChild(todoItem);
+
+    const actionButtons = document.createElement("div");
+    actionButtons.classList.add("actionButtons");
+
+    const editTodo = document.createElement("button");
+    editTodo.classList.add("editButton");
+    editTodo.innerHTML = "Edit";
+
+    const removeTodo = document.createElement("button");
+    removeTodo.classList.add("removeButton");
+    removeTodo.innerHTML = "Remove";
+
+    actionButtons.appendChild(editTodo);
+    actionButtons.appendChild(removeTodo);
+
+    todoListContainer.appendChild(actionButtons); 
+
+    todoList.appendChild(todoListContainer); 
+
+    input.value = "";
+
+    editTodo.addEventListener("click", ()=>{
+      if(editTodo.innerText === "EDIT"){
+        todoItem.removeAttribute("readonly");
+        todoItem.focus();
+        editTodo.innerText = "Save";
+      } else{
+        todoItem.setAttribute("readonly", "readonly");
+        editTodo.innerText = "EDIT";                
+      }
+    })
 
 
-function addListItem(){
-  
-  var li = document.createElement('li');
-        li.appendChild(document.createTextNode(userInput.value));
-        listItem.appendChild(li);
-        userInput.value = '';
-
-        let doneButton = document.createElement("button");
-        doneButton.innerHTML = `<ion-icon class="icon" name="checkmark-done">`;
-        doneButton.classList.add("doneBtn", "btn");
-        li.appendChild(doneButton);
-
-        let removeButton = document.createElement("button");
-        removeButton.innerHTML = `<ion-icon class="icon" name="trash-outline">`;
-        removeButton.classList.add("removeBtn", "btn");
-        li.appendChild(removeButton);
-
-        doneButton.addEventListener("click", function(){
-           doneButton.parentElement.style.textDecoration = "line-through";
-        });
-
-        removeButton.addEventListener("click", function(e){
-          let target = e.target;
-          target.parentElement.remove();
-          doneButton.remove();
-          li.remove();
-       })
-
-};
-
-function createOnkeypress (event){
-  if(inputItem() > 0 && event.keyCode === 13 ){
-    addListItem();
-} 
-};
-
-function createOnClick(){
-  if(inputItem() > 0){
-    addListItem();
-}
-};
+    removeTodo.addEventListener("click", () => {
+      todoList.removeChild(todoListContainer);
+    })
 
 
-button.addEventListener('click', createOnClick);
-
-userInput.addEventListener('keypress', createOnkeypress);
+  })
+})

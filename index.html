@@ -6,38 +6,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" sizes="32x32" href="" />
-  <title>Document</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <title>To-do</title>
+ <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
-  <h1 class="coolTitle"><b>Priority List</b></h1>
-
-  <div class="container">
+  <header>
+    <h1 class="coolTitle"><b>Priority List</b></h1>
     <h4 class="subTitle" id="first">Get it done today</h4>
-    <div class="formBody">
-    <input class="userInput" id="userInput" type="text" placeholder="enter item">
-    <button id="addButton" class="btn addBtn">
-      <ion-icon size="large" name="add-outline"></ion-icon>
+    <form class="formBody" id="todoForm">
+    <input class="userInput" id="todoInput" type="text" placeholder="enter item">
+    <button type="submit" id="todoSubmit" class="todoSubmit">
+      Add Task
+      <!-- <ion-icon size="large" name="add-outline"></ion-icon> -->
     </button>  
-    </div>
+  </form>
+  </header>
+
+
+<main>
+ <section class="todoList">
+  <div id="todos" class="taskContainer">
+    <!-- <div class="todo">
+      <div class="todoContent">
+        <input type="text" class="todoInput" value="todos" readonly>
+      </div>
+      <div class="actionButtons">
+        <button class="editButton">Edit</button>
+        <button class="removeButton">Remove</button>
+      </div>
+    </div> -->
   </div>
-  <div class="container taskContainer">
-      
-      <ul id="listItem">
-      
-      </ul>
-  
-  </div>
-  
+ </section>
+
+</main>
 
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   
   <!-- MDB -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
   <script type="text/javascript" src="./js/sript.js"></script>
 </body>
 

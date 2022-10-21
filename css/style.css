@@ -1,135 +1,190 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue&display=swap');
 
-
-html {
-    height: 100%;
-    font-family: 'Epilogue', sans-serif;
-  }
-
-
-  body {
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    background-image: url("../images/clay-banks-cEzMOp5FtV4-unsplash.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  .container{
-    padding: 15px 5px;
-    margin-top: 20px;
-    width: 360px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 2px 5px 7px rgb(80, 77, 77);
-    background-color: rgb(255, 255, 255);
+:root{
+  --dark-color: #404d61; 
+  --darker-color: #18273b;
+  --darkest-color: #111827;
+  --gray-color: #6b7280;
+  --light-color: #eee;
+  --redish-color: #f43f5e;
+  --purple-color: #4338ca;
 }
 
+*{
+  box-sizing: border-box;
+  margin: 0;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
 
-.coolTitle{
+body::before{
+  background-image: linear-gradient(
+    98deg,
+    rgb(29, 37, 90),
+    rgba(27, 28, 77, 0.5)
+  ), url('../images/clay-banks-cEzMOp5FtV4-unsplash.jpg');
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #fff;
+ }
+
+header{
+padding: 2rem 1rem;
+max-width: 800px;
+width: 100%;
+margin: 0 auto;
+}
+
+.coolTitle, .subTitle{
   text-align: center;
-  font-family: "oswald", Helvetica, sans-serif;
-  font-size: 40px;
-  letter-spacing: 4px;
-  word-spacing: 2px;
-  color: tomato;
-  text-shadow:    -1px -1px 0 firebrick,    -2px -2px 0 firebrick,    -3px -3px 0 firebrick,    -4px -4px 0 firebrick,    -5px -5px 0 firebrick,    -6px -6px 0 firebrick,    -7px -7px 0 firebrick,    -8px -8px 0 firebrick,    -30px -20px 40px dimgrey;
-  margin-bottom: 30px;
-  margin-top: 20px;
 }
 
 .subTitle{
-  text-align: center;
-  font-style: oblique;
-  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-.formBody{
+header h1{
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--gray-color);
+  margin-bottom: 1rem;
+}
+
+#todoForm{
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
 }
 
-
-.addBtn{
-  margin: 0 8px;
-  border-radius: 5px;
+input, button {
+  appearance: none;
   border: none;
-  font-weight: bold;
-  padding: 0 18px;
-  background-color: teal;
-  color: white;
-  border: 2px double teal;
-}
-.addBtn:hover{
-  background-color: white;
-  color: teal;
+  outline: none;
+  background: none;
 }
 
-.doneBtn{
-  margin: 0 8px;
-  border-radius: 5px;
-  border: none;
-  font-weight: bold;
-  padding: 0 18px;
-  background-color: white;
-  color: orangered;
-  border: 2px double orangered;
-  margin-left: auto;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-}
-.doneBtn:hover{
-  background-color: orangered;
-  color: white;
+.todoContent{
+  flex: 1 1 0%;
 }
 
-.removeBtn{
-  margin: 0 8px;
-  border-radius: 5px;
-  border: none;
-  font-weight: bold;
-  padding: 0 18px;
-  background-color: white;
-  color: rgb(191, 14, 14);
-  border: 2px double rgb(191, 14, 14);
-}
-.removeBtn:hover{
-  background-color: rgb(191, 14, 14);
-  color: white;
+.todoSubmit{
+  border: double 2px rgb(2, 22, 65);
+  border-radius: 12px;
+  padding: 5px;
 }
 
 .userInput{
-  padding: 8px;
-  border-radius: 10px;
-  border: none;
-  width: 250px;
-  border: 2px double teal;
+  flex: 1 1 0%;
+  background-color: var(--darker-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  color: var(--light-color);
+  font-size: 1.25rem;
 }
 
-#listItem{
-  margin-left: -10px;
+.userInput::placeholder{
+  color: var(--gray-color);  
 }
 
-li{ 
-  font-size: 25px;
-  color: rgb(0, 0, 0);
+.todoSubmit{
+  color: var(--redish-color);
+  font-size: 1.25rem;
+  font-weight: 700;
+  background-image: linear-gradient(to right, var(--redish-color), var(--purple-color));
+  -webkit-background-clip: text;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.todoSubmit:hover{
+  opacity: 0.8;  
+}
+
+.todoSubmit:active{
+  opacity: 0.6;  
+}
+
+main{
+  flex: 1 1 0%;
+  padding: 2rem 1rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.todosList{
+  padding: 1rem;
+}
+
+.todosList h2{
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--gray-color);
+  margin-bottom: 1rem;
+}
+
+#todos .todo{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
-  align-self: flex-end;
-  text-transform: capitalize;
+  background-color: var(--darkest-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+  
+#todos .todo .todoContent .todoInput{
+  color: var(--light-color);
+  font-size: 1.125rem;
+  width: 100%;
+  display: block;
+  transition: 0.4s; 
 }
 
-.icon{
-  font-size: 20px;
+#todos .todo .todoContent .todoInput:not(:read-only){
+  color: var(--redish-color);   
+}
+
+#todos .todo .actionButtons{
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+.todo .actionButtons button{
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+
+.todo .actionButtons button:hover{
+  opacity: 0.8;
+}
+
+.todo .actionButtons button:active{
+  opacity: 0.6;
+}
+
+.todo .actionButtons .editButton{
+  background-image: linear-gradient(to right, var(--redish-color), var(--purple-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.todo .actionButtons .removeButton{
+  color: coral;
 }
 
 
