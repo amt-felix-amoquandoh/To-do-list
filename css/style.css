@@ -102,8 +102,6 @@ input, button {
   color: var(--redish-color);
   font-size: 1.25rem;
   font-weight: 700;
-  background-image: linear-gradient(to right, var(--redish-color), var(--purple-color));
-  -webkit-background-clip: text;
   cursor: pointer;
   transition: 0.4s;
 }
@@ -178,9 +176,7 @@ main{
 }
 
 .todo .actionButtons .editButton{
-  background-image: linear-gradient(to right, var(--redish-color), var(--purple-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+ color: teal;
 }
 
 .todo .actionButtons .removeButton{
