@@ -4,7 +4,7 @@
   --dark-color: #404d61; 
   --darker-color: #18273b;
   --darkest-color: #111827;
-  --gray-color: #6b7280;
+  --gray-color: #393d44;
   --light-color: #eee;
   --redish-color: #f43f5e;
   --purple-color: #4338ca;
@@ -19,9 +19,9 @@
 body::before{
   background-image: linear-gradient(
     98deg,
-    rgb(29, 37, 90),
-    rgba(27, 28, 77, 0.5)
-  ), url('../images/clay-banks-cEzMOp5FtV4-unsplash.jpg');
+    rgba(28, 80, 104, 0.815),
+    rgba(192, 236, 206, 0.493)
+  ), url('../images/kelly-sikkema-6aY-6B3MiZ4-unsplash.jpg');
     content: '';
     position: fixed;
     top: 0;
@@ -43,7 +43,7 @@ body{
 
 header{
 padding: 2rem 1rem;
-max-width: 800px;
+max-width: 600px;
 width: 100%;
 margin: 0 auto;
 }
@@ -143,10 +143,11 @@ main{
   
 #todos .todo .todoContent .todoInput{
   color: var(--light-color);
-  font-size: 1.125rem;
+  font-size: 1.135rem;
   width: 100%;
   display: block;
   transition: 0.4s; 
+  text-transform: capitalize;
 }
 
 #todos .todo .todoContent .todoInput:not(:read-only){

@@ -1,93 +1,72 @@
 window.addEventListener("load", () => {
-  todos = JSON.parse(localStorage.getItem("todos")) || [];
+  //  
   const form = document.querySelector("#todoForm");
-  const input = document.querySelector("#todoInput");
-
-  const todo = input.value;
+  const todoInput = document.querySelector("#todoInput");
+  const listItems = document.querySelector("#todos");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    const todo = todoInput.value;
+
+    if(!todo){
+      alert("Add a task");
+      return
+    }
+
+    const todoContainer = document.createElement("div")
+    todoContainer.classList.add("todo");
+
+    const todoContent = document.createElement("div")
+    todoContent.classList.add("todoContent");
     
+    todoContainer.appendChild(todoContent)
+
+    const todoItem = document.createElement("input");
+    todoItem.classList.add("todoInput");
+    todoItem.type = "text";
+    todoItem.value = todo;
+    todoItem.setAttribute("readonly", "readonly");
+
+    todoContent.appendChild(todoItem);
+
+    const inputButtons = document.createElement("div");
+    inputButtons.classList.add("actionButtons");
+
+    const editButton = document.createElement("button");
+    editButton.classList.add("editButton");
+    editButton.innerHTML = "Edit";
+
+    const removeButton = document.createElement("button");
+    removeButton.classList.add("removeButton");
+    removeButton.innerHTML = "Delete"
     
-    todos.push(todo);
-    localStorage.setItem("todos", JSON.stringify(todos));
-    e.target.reset();
-    renderTodos();
-  })
-  renderTodos();
+    inputButtons.appendChild(editButton);
+    inputButtons.appendChild(removeButton);
+
+    todoContainer.appendChild(inputButtons);    
+
+    listItems.appendChild(todoContainer);
+    todoInput.value = "";
+
+    editButton.addEventListener("click", () => {
+      if(editButton.innerHTML == "Edit") {
+        todoItem.removeAttribute("readonly");
+        todoItem.focus();
+        editButton.innerHTML = "Save";
+      } else {
+        todoItem.setAttribute("readonly", "readonly");
+        editButton.innerText = "Edit";
+      }
+    })
+
+    removeButton.addEventListener("click", ()=>{
+      listItems.removeChild(todoContainer)
+    })
+    
+
+  }) 
 })
 
 
 
-function renderTodos(){
-  todos.forEach(todo => {
-    const todoList = document.createElement("section");
-    todoList.classList.add("todoList");
-
-
-    const todoListContainer = document.createElement("div");
-    todoListContainer.classList.add("taskContainer");
-
-  const todoListItem = document.createElement("div");
-  todoListItem.classList.add("todo");
-
-  todoListContainer.appendChild(todoListItem); 
-
-  const todoContent = document.createElement("div");
-  todoContent.classList.add("todoContent");
-  
-  const todoItem = document.createElement("input");
-  todoItem.classList.add("todoInput");
-  todoItem.type = "text";
-  todoItem.value = todo;
-  todoItem.setAttribute("readonly", "readonly");
-
-
-  const actionButtons = document.createElement("div");
-  actionButtons.classList.add("actionButtons");
-
-  const editTodo = document.createElement("button");
-  editTodo.classList.add("editButton");
-  editTodo.innerHTML = "Edit";
-
-  const removeTodo = document.createElement("button");
-  removeTodo.classList.add("removeButton");
-  removeTodo.innerHTML = "Remove";
-
-  actionButtons.appendChild(editTodo);
-  actionButtons.appendChild(removeTodo);
-  todoContent.appendChild(todoItem);
-  todoContent.appendChild(actionButtons);
-  todoListItem.appendChild(todoContent);
-  
-
-
-  todoList.appendChild(todoListContainer); 
-
-
-  editTodo.addEventListener("click", ()=>{
-    if(editTodo.innerText === "EDIT"){
-      todoItem.removeAttribute("readonly");
-      todoItem.focus();
-      editTodo.innerText = "Save";
-      localStorage.setItem("todos", JSON.stringify(todos));
-      renderTodos()
-    } else{
-      todoItem.setAttribute("readonly", "readonly");
-      editTodo.innerText = "EDIT"; 
-      localStorage.setItem("todos", JSON.stringify(todos));
-      renderTodos()              
-    }
-    renderTodos();
-  })
-
-
-  removeTodo.addEventListener("click", () => {
-    todoList.removeChild(todoListContainer);
-    localStorage.setItem("todos", JSON.stringify(todos));
-      renderTodos()
-  })
-  })
-
-}
