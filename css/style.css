@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Epilogue&display=swap");
 
-:root{
-  --dark-color: #404d61; 
+:root {
+  --dark-color: #404d61;
   --darker-color: #18273b;
   --darkest-color: #111827;
   --gray-color: #393d44;
@@ -10,81 +10,84 @@
   --purple-color: #4338ca;
 }
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-body::before{
+body::before {
   background-image: linear-gradient(
-    98deg,
-    rgba(28, 80, 104, 0.815),
-    rgba(192, 236, 206, 0.493)
-  ), url('../images/kelly-sikkema-6aY-6B3MiZ4-unsplash.jpg');
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+      98deg,
+      rgba(104, 28, 53, 0.815),
+      rgba(192, 236, 206, 0.493)
+    ),
+    url("../images/kelly-sikkema-6aY-6B3MiZ4-unsplash.jpg");
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-body{
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   color: #fff;
- }
-
-header{
-padding: 2rem 1rem;
-max-width: 600px;
-width: 100%;
-margin: 0 auto;
 }
 
-.coolTitle, .subTitle{
+header {
+  padding: 2rem 1rem;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.coolTitle,
+.subTitle {
   text-align: center;
 }
 
-.subTitle{
+.subTitle {
   margin-bottom: 20px;
 }
 
-header h1{
+header h1 {
   font-size: 2.5rem;
   font-weight: 300;
   color: var(--gray-color);
   margin-bottom: 1rem;
 }
 
-#todoForm{
+#todoForm {
   display: flex;
 }
 
-input, button {
+input,
+button {
   appearance: none;
   border: none;
   outline: none;
   background: none;
 }
 
-.todoContent{
+.todoContent {
   flex: 1 1 0%;
 }
 
-.todoSubmit{
+.todoSubmit {
   border: double 2px rgb(2, 22, 65);
   border-radius: 12px;
   padding: 5px;
 }
 
-.userInput{
+.userInput {
   flex: 1 1 0%;
   background-color: var(--darker-color);
   padding: 1rem;
@@ -94,11 +97,11 @@ input, button {
   font-size: 1.25rem;
 }
 
-.userInput::placeholder{
-  color: var(--gray-color);  
+.userInput::placeholder {
+  color: var(--gray-color);
 }
 
-.todoSubmit{
+.todoSubmit {
   color: var(--redish-color);
   font-size: 1.25rem;
   font-weight: 700;
@@ -106,33 +109,33 @@ input, button {
   transition: 0.4s;
 }
 
-.todoSubmit:hover{
-  opacity: 0.8;  
+.todoSubmit:hover {
+  opacity: 0.8;
 }
 
-.todoSubmit:active{
-  opacity: 0.6;  
+.todoSubmit:active {
+  opacity: 0.6;
 }
 
-main{
+main {
   flex: 1 1 0%;
   padding: 2rem 1rem;
   max-width: 100%;
   margin: 0 auto;
 }
 
-.todosList{
+.todosList {
   padding: 1rem;
 }
 
-.todosList h2{
+.todosList h2 {
   font-size: 1.5rem;
   font-weight: 300;
   color: var(--gray-color);
   margin-bottom: 1rem;
 }
 
-#todos .todo{
+#todos .todo {
   display: flex;
   justify-content: space-between;
   background-color: var(--darkest-color);
@@ -140,26 +143,26 @@ main{
   border-radius: 1rem;
   margin-bottom: 1rem;
 }
-  
-#todos .todo .todoContent .todoInput{
+
+#todos .todo .todoContent .todoInput {
   color: var(--light-color);
   font-size: 1.135rem;
   width: 100%;
   display: block;
-  transition: 0.4s; 
+  transition: 0.4s;
   text-transform: capitalize;
 }
 
-#todos .todo .todoContent .todoInput:not(:read-only){
-  color: var(--redish-color);   
+#todos .todo .todoContent .todoInput:not(:read-only) {
+  color: var(--redish-color);
 }
 
-#todos .todo .actionButtons{
+#todos .todo .actionButtons {
   display: flex;
   margin: 0 -0.5rem;
 }
 
-.todo .actionButtons button{
+.todo .actionButtons button {
   cursor: pointer;
   margin: 0 0.5rem;
   font-size: 1.125rem;
@@ -168,21 +171,18 @@ main{
   transition: 0.4s;
 }
 
-.todo .actionButtons button:hover{
+.todo .actionButtons button:hover {
   opacity: 0.8;
 }
 
-.todo .actionButtons button:active{
+.todo .actionButtons button:active {
   opacity: 0.6;
 }
 
-.todo .actionButtons .editButton{
- color: teal;
+.todo .actionButtons .editButton {
+  color: teal;
 }
 
-.todo .actionButtons .removeButton{
+.todo .actionButtons .removeButton {
   color: coral;
 }
-
-
-
